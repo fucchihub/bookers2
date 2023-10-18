@@ -1,3 +1,5 @@
+
+
 <h1>books詳細</h1>
 
 <h1>Books</h1>
@@ -5,17 +7,24 @@
 <table>
   <tbody>
       <tr>
+        <td>
+        <%= link_to user_path(@book.user.id) do %>
+          <%= image_tag @book.user.get_profile_image(100,100) %>
+          <p><%= @book.user.name %></p>
+        <% end %>
+        </td>
         <td><%= link_to "#{@book.title}", book_path(@book) %></td>
         <td><%= @book.body %></td>
         <% if @book.user == current_user %>
+        <td><%= link_to 'Edit', edit_book_path(@book) %></td>
         <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
   </tbody>
 </table>
 
-<%#<%= image_tag book.user.get_profile_image(80, 80) %>
-<%#<%= link_to 'Edit', edit_book_path(@book) %>
+
+<%#
 <%#<%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 

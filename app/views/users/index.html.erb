@@ -10,6 +10,14 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+　<tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= image_tag user.get_profile_image(100, 100) %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to "Show", user_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 

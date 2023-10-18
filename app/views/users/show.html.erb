@@ -1,18 +1,24 @@
+
+
 <h1>user詳細</h1>
 
 <h1>User Info</h1>
 
 <table class="table">
   <tbody>
-    <tr></tr>
+    <tr><%= image_tag @user.get_profile_image(100,100) %></tr>
     <tr>
 	    <th>name</th>
-	    <th>太郎</th>
+	    <th><%= @user.name %></th>
     </tr>
     <tr>
 	    <th>introduction</th>
-	    <th>こんにちは</th>
+	    <th><%= @user.introduction %></th>
     </tr>
+    <% if @user == current_user %>
+      <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+    <% else %>
+      <p><%= link_to "プロフィール編集", user_path(@user) %>
+    <% end %>
   </tbody>
 </table>
-
