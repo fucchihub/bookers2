@@ -1,25 +1,32 @@
-<h1>Users#edit</h1>
+<div class="container">
+  <div class="row ">
+    <div class="col-md-8 mx-auto">
 
-<h2>User Info</h2>
 
-<% if @user.errors.any? %>
-  <p><%= pluralize(@user.errors.count, "error") %> prohibited your profile from being saved:</p>
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+      <h2>User Info</h2>
 
-<%= form_with model: @user do |f| %>
-  <label for="inputName">Name</label>
-  <p><%= f.text_field :name, id:"inputName" %></p>
+      <% if @user.errors.any? %>
+        <p><%= pluralize(@user.errors.count, "error") %> prohibited your profile from being saved:</p>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
 
-  <label for="inputImage">Image</label>
-  <p><%= f.file_field :profile_image, accept: "image/*" %></p>
+      <%= form_with model: @user do |f| %>
+        <label for="inputName">Name</label>
+        <p><%= f.text_field :name, id:"inputName" %></p>
 
-  <label for="inputIntroduction">Introduction</label>
-  <p><%= f.text_area :introduction, id:"inputIntroduction" %></p>
+        <label for="inputImage">Image</label>
+        <p><%= f.file_field :profile_image, accept: "image/*" %></p>
 
-  <%= f.submit "Update User" %>
-<% end %>
+        <label for="inputIntroduction">Introduction</label>
+        <p><%= f.text_area :introduction, id:"inputIntroduction" %></p>
+
+        <%= f.submit "Update User" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

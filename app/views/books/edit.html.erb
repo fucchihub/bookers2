@@ -1,26 +1,32 @@
-<h1>Books#edit</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 mx-auto">
 
-<h2>Editing Book</h2>
+      <h2>Editing Book</h2>
 
-<% if @book.errors.any? %>
-  <p><%= pluralize(@book.errors.count, "error") %> prohibited your book from being saved:</p>
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+      <% if @book.errors.any? %>
+        <p><%= pluralize(@book.errors.count, "error") %> prohibited your book from being saved:</p>
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
 
 
-<%= form_with model: @book do |f| %>
-  <label for="inputTitle">Title</label>
-  <p><%= f.text_field :title, id:"inputTitle" %></p>
+      <%= form_with model: @book do |f| %>
+        <label for="inputTitle">Title</label>
+        <p><%= f.text_field :title, id:"inputTitle" %></p>
 
-  <label for="inputOpinion">Opinion</label>
-  <p><%= f.text_area :body, id:"inputOpinion" %></p>
+        <label for="inputOpinion">Opinion</label>
+        <p><%= f.text_area :body, id:"inputOpinion" %></p>
 
-  <%= f.submit "Update Book" %>
-<% end %>
+        <%= f.submit "Update Book" %>
+      <% end %>
 
-<%= link_to 'Show', @book %> |
-<%= link_to 'Back', books_path %>
+      <%= link_to 'Show', @book %> |
+      <%= link_to 'Back', books_path %>
+
+    </div>
+  </div>
+</div>
