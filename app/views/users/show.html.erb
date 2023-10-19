@@ -1,39 +1,35 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-3">
+      <%= render 'users/list', user: @user %>
+      <%= render 'books/book', book: @book %>
+    </div>
 
-      <h2>User Info</h2>
-
-      <table class="table">
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="1"></th>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><%= image_tag @user.get_profile_image(100,100) %></tr>
-          <tr>
-            <th>name</th>
-            <th><%= @user.name %></th>
-          </tr>
-          <tr>
-            <th>introduction</th>
-            <th><%= @user.introduction %></th>
-          </tr>
+          <% @books.each do |book| %>
+            <tr>
+              <td>
+                <%= link_to user_path(book.user.id) do %>
+                  <%= image_tag book.user.get_profile_image(100,100) %>
+                  <p><%= book.user.name %></p>
+                <% end %>
+              </td>
+              <td><%= link_to "#{book.title}", book_path(book) %></td>
+              <td><%= book.body %></td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
-
-          <div class="row">
-            <% if @user == current_user %>
-              <p>
-                <%= link_to edit_user_path(@user) do %>
-                  <i class="fa-solid fa-user-gear"></i>
-                <% end %>
-              </p>
-            <% else %>
-              <p>
-                <%= link_to user_path(@user) do %>
-                  <i class="fa-solid fa-user-gear"></i>
-                <% end %>
-              </p>
-            <% end %>
-          </div>
-
     </div>
   </div>
 </div>

@@ -19,51 +19,53 @@
           <div class="navbar-brand">
             <%= link_to "Bookers", root_path %>
           </div>
-          <li>
-            <%= link_to user_path(current_user.id) do %>
-              <i class="fa-solid fa-house"></i>Home
-            <% end %>
-          </li>
-          <li>
-            <%= link_to users_path do %>
-              <i class="fa-solid fa-users"></i>Users
-            <% end %>
-          </li>
-          <li>
-            <%= link_to books_path do %>
-              <i class="fa-solid fa-book-open"></i>Books
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa-solid fa-right-from-bracket"></i>Log out
-            <% end %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to "Bookers", root_path %>
-          </li>
-          <li>
-            <%= link_to root_path do %>
-              <i class="fa-solid fa-house"></i>Home
-            <% end %>
-          </li>
-          <li>
-            <%= link_to about_path do %>
-              <i class="fa-solid fa-link"></i>About
-            <% end %>
-          </li>
-          <li>
-            <%= link_to new_user_registration_path do %>
-              <i class="fa-solid fa-user-plus"></i></i>Sign Up
-            <% end %>
-          </li>
-          <li>
-            <%= link_to new_user_session_path do %>
-              <i class="fa-solid fa-right-from-bracket"></i>Log in
-            <% end %>
-          </li>
-        <% end %>
+          　<ul class="list-unstyled link-light text-decoration-none">
+            <li>
+              <%= link_to user_path(current_user.id) do %>
+                <i class="fa-solid fa-house"></i>Home
+              <% end %>
+            </li>
+            <li class="header-link">
+              <%= link_to users_path do %>
+                <i class="fa-solid fa-users"></i>Users
+              <% end %>
+            </li>
+            <li class="header-link">
+              <%= link_to books_path do %>
+                <i class="fa-solid fa-book-open"></i>Books
+              <% end %>
+            </li>
+            <li class="header-link">
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa-solid fa-right-from-bracket"></i>Log out
+              <% end %>
+            </li>
+          <% else %>
+            <li class="header-link">
+              <%= link_to "Bookers", root_path %>
+            </li>
+            <li class="header-link">
+              <%= link_to root_path do %>
+                <i class="fa-solid fa-house"></i>Home
+              <% end %>
+            </li>
+            <li class="header-link">
+              <%= link_to about_path do %>
+                <i class="fa-solid fa-link"></i>About
+              <% end %>
+            </li>
+            <li class="header-link">
+              <%= link_to new_user_registration_path do %>
+                <i class="fa-solid fa-user-plus"></i></i>Sign up
+              <% end %>
+            </li>
+            <li class="header-link">
+              <%= link_to new_user_session_path do %>
+                <i class="fa-solid fa-right-to-bracket"></i>Log in
+              <% end %>
+            </li>
+          <% end %>
+          </ul>
         </div>
       </nav>
     </header>

@@ -1,23 +1,26 @@
 <div class="container">
   <div class="row justify-content-center">
+    <div class="col-md-3">
+      <%= render 'users/list', user: @user %>
+      <%= render 'books/book', book: @book %>
+    </div>
+
     <div class="col-md-8 offset-md-1">
-
-      <h2>Books</h2>
-
+      <h2>Book detail</h2>
       <table>
         <tbody>
             <tr>
               <td>
-              <%= link_to user_path(@book.user.id) do %>
-                <%= image_tag @book.user.get_profile_image(100,100) %>
-                <p><%= @book.user.name %></p>
+              <%= link_to user_path(@books.user.id) do %>
+                <%= image_tag @books.user.get_profile_image(100,100) %>
+                <p><%= @books.user.name %></p>
               <% end %>
               </td>
-              <td><%= link_to "#{@book.title}", book_path(@book) %></td>
-              <td><%= @book.body %></td>
-              <% if @book.user == current_user %>
-              <td><%= link_to 'Edit', edit_book_path(@book) %></td>
-              <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to "#{@books.title}", book_path(@books) %></td>
+              <td><%= @books.body %></td>
+              <% if @books.user == current_user %>
+              <td><%= link_to 'Edit', edit_book_path(@books) %></td>
+              <td><%= link_to 'Destroy', book_path(@books), method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
             </tr>
         </tbody>
