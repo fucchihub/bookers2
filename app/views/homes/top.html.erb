@@ -10,13 +10,13 @@
 
       about various books!</p>
 
-      <button type="button" class="btn bg-info" "link-light">
-        <%= link_to "Log in", new_user_session_path %>
-      </button>
+      <div class="row bg-info justify-content-center mb-3">
+        <%= link_to "Log in", new_user_session_path, class: 'btn text-white' %>
+      </div>
 
-      <button type="button" class="btn bg-success" "link-light">
-        <%= link_to "Sign up", new_user_registration_path %>
-      </button>
+      <div class= "row bg-success justify-content-center">
+        <%= link_to "Sign up", new_user_registration_path, class: 'btn text-white' %>
+      </div>
 
 
     </div>
