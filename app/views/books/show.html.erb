@@ -7,10 +7,10 @@
 
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
-      <table>
-        <tbodyclass="border-top">
+      <table class="w-100">
+        <tbody class="border-top">
             <tr>
-              <td>
+              <td class="pt-2 pl-2 pb-2">
               <%= link_to user_path(@books.user.id) do %>
                 <%= image_tag @books.user.get_profile_image(100,100) %>
                 <p><%= @books.user.name %></p>

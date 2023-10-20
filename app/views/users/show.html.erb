@@ -6,22 +6,21 @@
     </div>
 
     <div class="col-md-8 offset-md-1">
-      <h2>Book detail</h2>
-      <table>
+      <h2>Books</h2>
+      <table class="table table-hover w-100">
         <thead class="border-top border-bottom">
           <tr>
-            <th colspan="1" class="ml-3"></th>
-            <th class="ml-3">Title</th>
-            <th class="ml-3">Opinion</th>
+            <th colspan="1"></th>
+            <th>Title</th>
+            <th>Opinion</th>
           </tr>
         </thead>
         <tbody>
           <% @books.each do |book| %>
             <tr>
-              <td>
+              <td class="pt-2 pl-2">
                 <%= link_to user_path(book.user.id) do %>
-                  <%= image_tag book.user.get_profile_image(100,100) %>
-                  <p><%= book.user.name %></p>
+                  <%= image_tag book.user.get_profile_image(80,80) %>
                 <% end %>
               </td>
               <td><%= link_to "#{book.title}", book_path(book) %></td>

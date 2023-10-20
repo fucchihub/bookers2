@@ -8,17 +8,18 @@
 
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
-      <table class="w-100">
+      <table class="table">
         <thead class="border-top border-bottom">
           <tr>
-            <th class="ml-3">Image</th>
-            <th class="ml-3">Name</th>
+            <th class="col-md-4">image</th>
+            <th class="col-md-5">name</th>
+            <th class="col-md-3"></th>
           </tr>
         </thead>
       　<tbody>
           <% @users.each do |user| %>
-            <tr>
-              <td><%= image_tag user.get_profile_image(100, 100) %></td>
+            <tr class="border-top">
+              <td class="pt-2 pl-2 pb-2"><%= image_tag user.get_profile_image(80,80) %></td>
               <td><%= user.name %></td>
               <td><%= link_to "Show", user_path(user) %></td>
             </tr>
