@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row">
     <div class="col-md-3">
       <%= render 'users/list', user: @user %>
       <%= render 'books/book', book: @book %>
@@ -8,7 +8,7 @@
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table>
-        <tbody>
+        <tbodyclass="border-top">
             <tr>
               <td>
               <%= link_to user_path(@books.user.id) do %>
@@ -19,8 +19,8 @@
               <td><%= link_to "#{@books.title}", book_path(@books) %></td>
               <td><%= @books.body %></td>
               <% if @books.user == current_user %>
-              <td><%= link_to 'Edit', edit_book_path(@books) %></td>
-              <td><%= link_to 'Destroy', book_path(@books), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Edit', edit_book_path(@books), class: 'btn btn-sm bg-success text-white' %></td>
+              <td><%= link_to 'Destroy', book_path(@books), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm bg-danger text-white' %></td>
               <% end %>
             </tr>
         </tbody>

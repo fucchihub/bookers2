@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8 mx-auto">
+  <div class="row">
+    <div class="col-md-6 px-5 mx-auto">
 
-      <h2>Editing Book</h2>
+      <h1>Editing Book</h1>
 
       <% if @book.errors.any? %>
         <p><%= pluralize(@book.errors.count, "error") %> prohibited your book from being saved:</p>
@@ -15,13 +15,13 @@
 
 
       <%= form_with model: @book do |f| %>
-        <label for="inputTitle">Title</label>
-        <p><%= f.text_field :title, id:"inputTitle" %></p>
+        <label for="inputTitle" class="form-label">Title</label>
+        <p><%= f.text_field :title, id:"inputTitle", class: "form-control" %></p>
 
-        <label for="inputOpinion">Opinion</label>
-        <p><%= f.text_area :body, id:"inputOpinion" %></p>
+        <label for="inputOpinion" class="form-label">Opinion</label>
+        <p><%= f.text_area :body, id:"inputOpinion", class: "form-control" %></p>
 
-        <%= f.submit "Update Book" %>
+        <p><%= f.submit "Update Book", class: 'btn bg-success text-white' %></p>
       <% end %>
 
       <%= link_to 'Show', @book %> |

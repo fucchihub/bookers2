@@ -1,9 +1,8 @@
 <div class="container">
-  <div class="row ">
-    <div class="col-md-8 mx-auto">
+  <div class="row">
+    <div class="col-md-6 px-5 mx-auto">
 
-
-      <h2>User Info</h2>
+      <h2>User info</h2>
 
       <% if @user.errors.any? %>
         <p><%= pluralize(@user.errors.count, "error") %> prohibited your profile from being saved:</p>
@@ -15,16 +14,16 @@
       <% end %>
 
       <%= form_with model: @user do |f| %>
-        <label for="inputName">Name</label>
-        <p><%= f.text_field :name, id:"inputName" %></p>
+        <label for="inputName" class="form-label">Name</label>
+        <p><%= f.text_field :name, id:"inputName", class: "form-control" %></p>
 
         <label for="inputImage">Image</label>
         <p><%= f.file_field :profile_image, accept: "image/*" %></p>
 
-        <label for="inputIntroduction">Introduction</label>
-        <p><%= f.text_area :introduction, id:"inputIntroduction" %></p>
+        <label for="inputIntroduction" class="form-label">Introduction</label>
+        <p><%= f.text_area :introduction, id:"inputIntroduction", class: "form-control" %></p>
 
-        <%= f.submit "Update User" %>
+        <%= f.submit "Update User", class: 'btn bg-secondary text-white' %>
       <% end %>
 
     </div>

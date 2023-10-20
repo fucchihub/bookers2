@@ -10,16 +10,16 @@
       <% end %>
 
       <%= form_with model: book, url: books_path, method: :post do |f| %>
-        <h5>Title</h5>
-        <%= f.text_field :title %>
+        <label for="inputNewTitle" class="form-label">Title</label>
+        <p><%= f.text_field :title, id:"inputNewTitle", class: "form-control" %></p>
 
-        <h5>Body</h5>
-        <%= f.text_area :body %>
+        <label for="inputNewOpinion" class="form-label">Opinion</label>
+        <p><%= f.text_area :body, id:"inputNOpinion", class: "form-control" %></p>
 
-        <p><%= f.submit 'Create Book' %></p>
+
+        <p><%= f.submit 'Create Book', class: 'btn bg-success text-white' %></p>
       <% end %>
 
 
 <%#<%= render 'users/list', user: @user %>
 <%#<%= render 'books/book', book: @book %>
-

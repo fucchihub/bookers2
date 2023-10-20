@@ -1,5 +1,5 @@
 
-      <h2>User Info</h2>
+      <h2>User info</h2>
 
       <table class="table">
         <tbody>
@@ -16,15 +16,21 @@
       </table>
 
             <% if user == current_user %>
-              <p>
-                <%= link_to edit_user_path(user) do %>
+                <%= link_to edit_user_path(user), class: 'btn btn-block btn-outline-secondary justify-content-center rounded mb-3 text-secondary' do %>
                   <i class="fa-solid fa-user-gear"></i>
                 <% end %>
-              </p>
+              <style>
+                .btn:hover i{
+                  color: #fff;
+                  }
+              </style>
             <% else %>
-              <p>
-                <%= link_to edit_user_path(user) do %>
+                <%= link_to edit_user_path(user), class: 'btn btn-block btn-outline-secondary justify-content-center rounded mb-3 text-secondary' do %>
                   <i class="fa-solid fa-user-gear"></i>
                 <% end %>
-              </p>
+              <style>
+                .btn:hover i{
+                  color: #fff;
+                  }
+              </style>
             <% end %>
